@@ -48,7 +48,7 @@ def Get_Location():
 
 
 def dataFile_Merge(startNum, endNum,type_file):
-    
+
     outputPath = '../data/processed/' + 'Merged' + str(startNum) + '-' + str(endNum) + '_' + type_file + '.csv'
     data_t = []
     for i in range(startNum, endNum + 1):
