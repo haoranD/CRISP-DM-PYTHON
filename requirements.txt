@@ -2,6 +2,13 @@
 -e .
 
 # external requirements
+#This is for necessary analysis dependence
+numpy
+geopy
+matplotlib
+plotly
+pandas 
+sklearn
 click
 Sphinx
 coverage
