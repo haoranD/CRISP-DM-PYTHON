@@ -1,3 +1,20 @@
+import numpy as np
+import squarify
+from geopy.geocoders import Nominatim
+import matplotlib.pyplot as plt
+import plotly 
+plotly.tools.set_credentials_file(username='haoran88', api_key='pP3roY52YPNbI68oB3KS')
+import pandas as pd
+import sklearn
+from os import listdir
+import os
+import sys
+import csv
+import plotly.plotly as py
+import plotly.graph_objs as go
+import gmaps
+import gmaps.datasets
+from time import time
 
 #Input the raw data with definition of type on data name.
 #Output the unduplicate name of data----each kind  of data
@@ -14,7 +31,6 @@ def All_Kinds_Data(data_file_Path):
     just_count = 0
 
     for i in range(len(data_file_Path) + 1):
-        
         if i >= len(data_file_Path):
             times_list.append(tmp_data)
             nameCount.append('Term_'+str(num_times))
@@ -30,10 +46,6 @@ def All_Kinds_Data(data_file_Path):
             times_count.append('Term_'+str(num_times))
     #transform to be a dataframe to show easily
     data_file = pd.DataFrame(times_list,index=nameCount)
-
-    print('Data Type Table:')
-    display(data_file)
-
     return data_file
 
 
@@ -48,6 +60,5 @@ def Load_single_file(tNum, type_file):
     data = pd.read_csv(fileName)
 
     singlefile = pd.read_csv(fileName)
-    singlefile.head()
 
     return singlefile
