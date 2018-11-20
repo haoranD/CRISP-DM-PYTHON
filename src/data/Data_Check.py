@@ -1,6 +1,3 @@
-import Import_Packages
-
-Import_Packages
 
 #Input the raw data with definition of type on data name.
 #Output the unduplicate name of data----each kind  of data
@@ -29,8 +26,8 @@ def All_Kinds_Data(data_file_Path):
                 times_list.append(tmp_data)
                 tmp_data = []
                 just_count = i
-        tmp_data.append(data_file_Path[i][17:-4])
-        times_count.append('Term_'+str(num_times))
+            tmp_data.append(data_file_Path[i][17:-4])
+            times_count.append('Term_'+str(num_times))
     #transform to be a dataframe to show easily
     data_file = pd.DataFrame(times_list,index=nameCount)
 
