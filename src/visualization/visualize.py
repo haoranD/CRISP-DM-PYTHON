@@ -2,7 +2,8 @@ from src import *
 import numpy as np
 from geopy.geocoders import Nominatim
 import matplotlib.pyplot as plt
-import plotly 
+import plotly
+plotly.tools.set_credentials_file(username='haoran88', api_key='o8i3aa8qgpoIpCOBQgt8')
 import pandas as pd
 import sklearn
 from os import listdir
@@ -98,17 +99,3 @@ def Treemap(singlefile):
     re_va = list(dict_reasons.values())
 
     return reasons, re_va
-
-
-def Heatmap_Google():
-    gmaps.configure(api_key="AIzaSyB2DKOMtZVdPBThMcJyWZhnyTvdrn_HuRo") # Your Google API key
-
-    # load a Numpy array of (latitude, longitude) pairs
-    #locations = gmaps.datasets.load_dataset("taxi_rides")
-    print('Alomost half of students come from European,and many of others are from Asia and South America')
-    print('Also, the proportions of the not english speaking country is big enough, and for the students better experien-ce, it is necessary to give some subtitles for these major area of students ')
-    fig = gmaps.figure()
-
-    fig.add_layer(gmaps.heatmap_layer(locations,max_intensity=20, point_radius=9.0))
-
-    fig

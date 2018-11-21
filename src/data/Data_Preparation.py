@@ -4,7 +4,7 @@ from geopy.geocoders import Nominatim
 import matplotlib.pyplot as plt
 import plotly 
 import pandas as pd
-plotly.tools.set_credentials_file(username='haoran88', api_key='pP3roY52YPNbI68oB3KS')
+plotly.tools.set_credentials_file(username='haoran88', api_key='o8i3aa8qgpoIpCOBQgt8')
 import sklearn
 from os import listdir
 import os
@@ -98,7 +98,3 @@ def extract_data(data_type, extract_name,term = 0, ifMerged = False, start_term=
     exNew.to_csv(outputPath)
     
     return exNew
-
-def clean_AllCountry():
-
-    return cleaned_country
