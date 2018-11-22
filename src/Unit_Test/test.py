@@ -34,4 +34,3 @@ def test_MD_False():
 
 def test_ED_False():
         assert type(extract_data('question-response',' correct',term = 5, ifMerged = True, start_term=2, end_term=1)) == pd.DataFrame
-

@@ -17,7 +17,10 @@ import gmaps.datasets
 from time import time
 
 #Input the raw data with definition of type on data name.
-#Output the unduplicate name of data----each kind  of data
+#Output the unduplicate name of data----each kind  of dat
+#Parameter:
+#         data_file_Path : main root of all single file
+#
 def All_Kinds_Data(data_file_Path):
     #Store the number of term
     num_times = 1
@@ -29,7 +32,8 @@ def All_Kinds_Data(data_file_Path):
     #for the table show
     nameCount = []
     just_count = 0
-
+    
+    #Get different kinds of data for each term
     for i in range(len(data_file_Path) + 1):
         if i >= len(data_file_Path):
             times_list.append(tmp_data)
@@ -44,9 +48,11 @@ def All_Kinds_Data(data_file_Path):
                 just_count = i
             tmp_data.append(data_file_Path[i][17:-4])
             times_count.append('Term_'+str(num_times))
+
     #transform to be a dataframe to show easily
     data_file = pd.DataFrame(times_list,index=nameCount)
-    return data_file
+    data = data_file.drop(['Term_8'])
+    return data
 
 
 #Load the single file and show the 6 head of data

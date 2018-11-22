@@ -15,6 +15,10 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 from time import time
 
+#Preprocess and generates the necessary parameters for gender pie plot
+#input the single file which gender variable in,it should be 'enrolment'
+#
+#
 def gender_pie(singlefile):
     singlefile = singlefile[singlefile['gender'] != 'Unknown']
 
@@ -29,6 +33,11 @@ def gender_pie(singlefile):
 
     return labels, values
 
+
+#Preprocess and generates the necessary parameters for bar plot
+#input the single file which country variable in,it should be 'enrolment'
+#
+#
 def country_bar(singlefile):
     singlefile = singlefile[singlefile['detected_country'] != 'Unknown']
     country = singlefile['detected_country']
@@ -41,6 +50,11 @@ def country_bar(singlefile):
     return re_name,re_vale
 
 
+
+#Preprocess and generates the necessary parameters for  pie plot
+#input the two files which country variable in,it should be 'enrolment'
+#
+#
 def country_pie(fileName1, fileName2):
     pie1 = fileName1
     pie1 = pie1[pie1['detected_country'] != 'Unknown']
@@ -64,6 +78,11 @@ def country_pie(fileName1, fileName2):
     return re_name1,re_value1,re_name2,re_value2
 
 
+
+#Preprocess and generates the necessary parameters for answer line plot
+#input the single file which question variable in,it should be 'question-response'
+#
+#
 def answer_line(singlefile):
     numF = len(singlefile[singlefile['correct'] == False])
     numT = len(singlefile[singlefile['correct'] == True])
@@ -79,6 +98,11 @@ def answer_line(singlefile):
 
     return question, WrongAnswer
 
+
+#Preprocess and generates the necessary parameters for treemap  plot
+#input the single file which leaving reason variable in,it should be 'leaving rsponse survey'
+#
+#
 def Treemap(singlefile):
     reasons = pd.unique(singlefile['leaving_reason'])
 
