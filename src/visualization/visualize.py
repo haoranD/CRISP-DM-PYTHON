@@ -89,12 +89,12 @@ def answer_line(singlefile):
 
     question = pd.unique(singlefile['quiz_question'])
 
-    WrongAnswer = []
+    WrongAnswer_percent = []
 
     choose_tmp = singlefile[singlefile['correct'] == False]
 
     for i in question:
-        WrongAnswer.append(len(choose_tmp[choose_tmp['quiz_question'] == i]))
+        WrongAnswer_percent.append(len(choose_tmp[choose_tmp['quiz_question'] == i]) / len(singlefile['quiz_question'] == i))
 
     return question, WrongAnswer
 
