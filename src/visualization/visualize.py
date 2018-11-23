@@ -96,7 +96,7 @@ def answer_line(singlefile):
     for i in question:
         WrongAnswer_percent.append(len(choose_tmp[choose_tmp['quiz_question'] == i]) / len(singlefile['quiz_question'] == i))
 
-    return question, WrongAnswer
+    return question, WrongAnswer_percent
 
 
 #Preprocess and generates the necessary parameters for treemap  plot
